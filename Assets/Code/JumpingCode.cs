@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class JumpingCode : MonoBehaviour
 {
-    private Vector3 jump;
+    public Vector3 jump;
     public float jumpForce = 2.0f;
     public AudioSource AudioS;
     
