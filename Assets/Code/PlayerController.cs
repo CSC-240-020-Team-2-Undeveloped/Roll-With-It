@@ -7,12 +7,10 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 0;
-    public TextMeshProUGUI KeyCountText;
+    public TextMeshProUGUI countText;
     public GameObject winTextObject;
-    public GameObject doorOpenTextObject;
 
     private Rigidbody rb;
-    private int countWin;
     private int count;
     private float movementX;
     private float movementY;
@@ -22,12 +20,9 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         count = 0;
-	  countWin = 0;
 
-        SetKeyCountText();
-	  SetWinText();
-        winTextObject.SetActive(false);
-	  doorOpenTextObject.SetActive(false);
+        // SetCountText();
+        // winTextObject.SetActive(false);
     }
 
     private void OnMove(InputValue movementValue)
@@ -38,23 +33,14 @@ public class PlayerController : MonoBehaviour
         movementY = movementVector.y;
     }
 
-
-    void SetKeyCountText()
-    {
-        KeyCountText.text = "Keys Collected: " + count.ToString();
-        if(count == 4)
-        {
-		doorOpenTextObject.SetActive(true);
-        }
-    }
-
-    void SetWinText()
-    {
-	  if(countWin == 1)
-	  {
-		winTextObject.SetActive(true);
-	  }
-    }
+    // void SetCountText()
+    // {
+    //     countText.text = "Count: " + count.ToString();
+    //     if(count >= 8)
+    //     {
+    //         winTextObject.SetActive(true);
+    //     }
+    // }
 
     private void FixedUpdate()
     {
@@ -62,36 +48,15 @@ public class PlayerController : MonoBehaviour
 
         rb.AddForce(movement * speed);
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Key1"))
+        if(other.gameObject.CompareTag("PickUp"))
         {
             other.gameObject.SetActive(false);
             count = count + 1;
 
-            SetKeyCountText();
-        }
-	  if(other.gameObject.CompareTag("Key2"))
-        {
-            other.gameObject.SetActive(false);
-            count = count + 1;
-
-            SetKeyCountText();
-        }
-	  if(other.gameObject.CompareTag("Key3"))
-        {
-            other.gameObject.SetActive(false);
-            count = count + 1;
-
-            SetKeyCountText();
-        }
-	  if(other.gameObject.CompareTag("Key4"))
-        {
-            other.gameObject.SetActive(false);
-            count = count + 1;
-
-            SetKeyCountText();
+            // SetCountText();
         }
     }
 }
