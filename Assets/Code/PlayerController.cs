@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI KeyCountText;
     public GameObject winTextObject;
     public GameObject doorOpenTextObject;
+    public GameObject cam;
 
     private Rigidbody rb;
     private int count;
@@ -59,38 +60,40 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 movement = new Vector3(movementX, 0.0f, movementY);
 
+        movement = Quaternion.Euler(0,cam.transform.rotation.y,0) * movement;
+
         rb.AddForce(movement * speed);
     }
     
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Key1"))
-        {
-            other.gameObject.SetActive(false);
-            count = count + 1;
+      if(other.gameObject.CompareTag("Key1"))
+      {
+        other.gameObject.SetActive(false);
+        count = count + 1;
 
-            SetKeyCountText();
-        }
-	  if(other.gameObject.CompareTag("Key2"))
-        {
-            other.gameObject.SetActive(false);
-            count = count + 1;
+        SetKeyCountText();
+      }
+      if(other.gameObject.CompareTag("Key2"))
+      {
+        other.gameObject.SetActive(false);
+        count = count + 1;
 
-            SetKeyCountText();
-        }
-	  if(other.gameObject.CompareTag("Key3"))
-        {
-            other.gameObject.SetActive(false);
-            count = count + 1;
+        SetKeyCountText();
+      }
+      if(other.gameObject.CompareTag("Key3"))
+      {
+        other.gameObject.SetActive(false);
+        count = count + 1;
 
-            SetKeyCountText();
-        }
-	  if(other.gameObject.CompareTag("Key4"))
-	  {
-		other.gameObject.SetActive(false);
-		count = count + 1;
-		
-		SetKeyCountText();
-	  }
+        SetKeyCountText();
+      }
+      if(other.gameObject.CompareTag("Key4"))
+      {
+        other.gameObject.SetActive(false);
+        count = count + 1;
+        
+        SetKeyCountText();
+      }
     }
 }

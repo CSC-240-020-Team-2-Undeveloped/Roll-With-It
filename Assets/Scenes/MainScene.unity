@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.17276838, g: 0.21589231, b: 0.2978262, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589245, b: 0.2978263, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1214,7 +1214,6 @@ GameObject:
   - component: {fileID: 24232530}
   - component: {fileID: 24232532}
   - component: {fileID: 24232531}
-  - component: {fileID: 24232533}
   - component: {fileID: 24232534}
   - component: {fileID: 24232535}
   m_Layer: 0
@@ -1231,7 +1230,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24232529}
-  m_LocalRotation: {x: 0.3826834, y: -0, z: -0, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: -8.430664}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1290,19 +1289,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &24232533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 24232529}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 781d0b9f5de10034ba19da9a2ad3dc76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 171510434}
 --- !u!54 &24232534
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1331,9 +1317,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc3d3f133d2fa584cbdc77810cb55945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Parent: {fileID: 2104233014}
-  rotate: 20
+  rotate: 45
   player: {fileID: 171510434}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &27146940
 GameObject:
   m_ObjectHideFlags: 0
@@ -5653,6 +5639,7 @@ MonoBehaviour:
   KeyCountText: {fileID: 415783450}
   winTextObject: {fileID: 1621528746}
   doorOpenTextObject: {fileID: 1813591466}
+  cam: {fileID: 24232529}
 --- !u!114 &171510440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5682,7 +5669,7 @@ MonoBehaviour:
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 24232532}
 --- !u!54 &171510441
 Rigidbody:
   m_ObjectHideFlags: 0
