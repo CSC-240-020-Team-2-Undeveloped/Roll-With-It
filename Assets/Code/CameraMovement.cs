@@ -19,17 +19,17 @@ public class CameraMovement : MonoBehaviour
     if(Input.GetKey (KeyCode.Q))
     {	
       offset = Quaternion.Euler(0,-rotate*Time.deltaTime,0) * offset;
-      transform.Rotate(-45.0f,0,0);
+      transform.Rotate(-30.0f,0,0);
       transform.Rotate(0,-rotate*Time.deltaTime,0);
-      transform.Rotate(45.0f,0,0);
+      transform.Rotate(30.0f,0,0);
     }
 
     if(Input.GetKey (KeyCode.E))
     {	
       offset = Quaternion.Euler(0,rotate*Time.deltaTime,0) * offset;
-      transform.Rotate(-45.0f,0,0);
+      transform.Rotate(-30.0f,0,0);
       transform.Rotate(0,rotate*Time.deltaTime,0);
-      transform.Rotate(45.0f,0,0);
+      transform.Rotate(30.0f,0,0);
       
     }
     transform.position = player.transform.position + offset;

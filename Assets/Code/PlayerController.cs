@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -60,7 +61,10 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 movement = new Vector3(movementX, 0.0f, movementY);
 
-        movement = Quaternion.Euler(0,cam.transform.rotation.y,0) * movement;
+        cam.transform.Rotate(-30.0f,0,0);
+        movement = Quaternion.Euler(0,cam.transform.eulerAngles.y,0) * movement;
+        print(cam.transform.eulerAngles.y);
+        cam.transform.Rotate(30.0f,0,0);
 
         rb.AddForce(movement * speed);
     }
