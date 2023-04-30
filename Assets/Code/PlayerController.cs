@@ -19,17 +19,21 @@ public class PlayerController : MonoBehaviour
     private float movementX;
     private float movementY;
 
+    public Vector3 respawnVec;
+
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        count = 0;
-	  countWin = 0;
+      rb = GetComponent<Rigidbody>();
+      count = 0;
+      countWin = 0;
 
-        SetKeyCountText();
-	  SetWinText();
-        winTextObject.SetActive(false);
-	  doorOpenTextObject.SetActive(false);
+      SetKeyCountText();
+      SetWinText();
+      winTextObject.SetActive(false);
+      doorOpenTextObject.SetActive(false);
+
+      respawnVec = transform.position;
     }
 
     private void OnMove(InputValue movementValue)
@@ -77,6 +81,14 @@ public class PlayerController : MonoBehaviour
         count = count + 1;
 
         SetKeyCountText();
+      }
+      if(other.gameObject.CompareTag("Respawn"))
+      {
+        transform.position = respawnVec;
+      }
+      if(other.gameObject.CompareTag("SpawnPoint"))
+      {
+        respawnVec = other.transform.position;
       }
       // if(other.gameObject.CompareTag("Key 2"))
       // {
