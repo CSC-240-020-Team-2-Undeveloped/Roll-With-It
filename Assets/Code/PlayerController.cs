@@ -63,7 +63,6 @@ public class PlayerController : MonoBehaviour
 
         cam.transform.Rotate(-30.0f,0,0);
         movement = Quaternion.Euler(0,cam.transform.eulerAngles.y,0) * movement;
-        print(cam.transform.eulerAngles.y);
         cam.transform.Rotate(30.0f,0,0);
 
         rb.AddForce(movement * speed);
@@ -71,33 +70,34 @@ public class PlayerController : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-      if(other.gameObject.CompareTag("Key1"))
+      print(other.name);
+      if(other.gameObject.CompareTag("PickUp"))
       {
         other.gameObject.SetActive(false);
         count = count + 1;
 
         SetKeyCountText();
       }
-      if(other.gameObject.CompareTag("Key2"))
-      {
-        other.gameObject.SetActive(false);
-        count = count + 1;
+      // if(other.gameObject.CompareTag("Key 2"))
+      // {
+      //   other.gameObject.SetActive(false);
+      //   count = count + 1;
 
-        SetKeyCountText();
-      }
-      if(other.gameObject.CompareTag("Key3"))
-      {
-        other.gameObject.SetActive(false);
-        count = count + 1;
+      //   SetKeyCountText();
+      // }
+      // if(other.gameObject.CompareTag("Key 3"))
+      // {
+      //   other.gameObject.SetActive(false);
+      //   count = count + 1;
 
-        SetKeyCountText();
-      }
-      if(other.gameObject.CompareTag("Key4"))
-      {
-        other.gameObject.SetActive(false);
-        count = count + 1;
+      //   SetKeyCountText();
+      // }
+      // if(other.gameObject.CompareTag("Key 4"))
+      // {
+      //   other.gameObject.SetActive(false);
+      //   count = count + 1;
         
-        SetKeyCountText();
-      }
+      //   SetKeyCountText();
+      // }
     }
 }
