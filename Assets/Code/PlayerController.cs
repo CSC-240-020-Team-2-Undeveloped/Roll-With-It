@@ -59,14 +59,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void SetWinText()
-    {
-	  if(countWin == 1)
-	  {
-		winTextObject.SetActive(true);
-	  }
-    }
-
     private void FixedUpdate()
     {
         Vector3 movement = new Vector3(movementX, 0.0f, movementY);
@@ -103,6 +95,10 @@ public class PlayerController : MonoBehaviour
       if(other.gameObject.CompareTag("SpawnPoint"))
       {
         respawnVec = other.transform.position;
+      }
+      if(other.gameObject.CompareTag("CubePickUp"))
+      {
+        winTextObject.SetActive(true);
       }
     }
 }
