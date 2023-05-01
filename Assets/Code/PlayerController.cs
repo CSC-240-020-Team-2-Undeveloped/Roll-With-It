@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
       countWin = 0;
 
       SetKeyCountText();
-      SetWinText();
       winTextObject1.SetActive(false);
       winTextObject2.SetActive(false);
       winTextObject3.SetActive(false);
@@ -61,11 +60,6 @@ public class PlayerController : MonoBehaviour
             doorOpenTextObject.SetActive(true);
             invisibleDoor.SetActive(false);
         }
-    }
-
-    void SetWinText()
-    {
-
     }
 
     private void FixedUpdate()
