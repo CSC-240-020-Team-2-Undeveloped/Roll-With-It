@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 0;
     public TextMeshProUGUI KeyCountText;
-    public GameObject winTextObject;
+    public GameObject winTextObject1;
+    public GameObject winTextObject2;
+    public GameObject winTextObject3;
     public GameObject welcomeTextObject;
     public GameObject doorOpenTextObject;
     public GameObject invisibleDoor;
@@ -103,7 +105,9 @@ public class PlayerController : MonoBehaviour
       }
       if(other.gameObject.CompareTag("CubePickUp"))
       {
-        winTextObject.SetActive(true);
+        winTextObject1.SetActive(true);
+        winTextObject2.SetActive(true);
+        winTextObject3.SetActive(true);
         other.gameObject.SetActive(false);
       }
     }
