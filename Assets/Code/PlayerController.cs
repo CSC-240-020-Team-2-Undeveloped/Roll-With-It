@@ -104,6 +104,7 @@ public class PlayerController : MonoBehaviour
       if(other.gameObject.CompareTag("CubePickUp"))
       {
         winTextObject.SetActive(true);
+        other.gameObject.SetActive(false);
       }
     }
 }
