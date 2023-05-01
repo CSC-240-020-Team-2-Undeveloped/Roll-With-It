@@ -104,6 +104,7 @@ public class PlayerController : MonoBehaviour
         winTextObject1.SetActive(true);
         winTextObject2.SetActive(true);
         winTextObject3.SetActive(true);
+        doorOpenTextObject.SetActive(false);
         other.gameObject.SetActive(false);
       }
     }
