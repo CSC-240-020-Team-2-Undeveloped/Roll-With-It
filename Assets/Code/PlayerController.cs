@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
       rb = GetComponent<Rigidbody>();
-      count = 0;
+      count = 4; //reset this to 0 after testing
       countWin = 0;
 
       SetKeyCountText();
