@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
     public float speed = 0;
     public TextMeshProUGUI KeyCountText;
     public GameObject winTextObject;
+    public GameObject welcomeTextObject;
     public GameObject doorOpenTextObject;
+    public GameObject invisibleDoor;
     public GameObject cam;
 
     private Rigidbody rb;
@@ -42,6 +44,9 @@ public class PlayerController : MonoBehaviour
 
         movementX = movementVector.x;
         movementY = movementVector.y;
+
+        welcomeTextObject.SetActive(false);
+
     }
 
     void SetKeyCountText()
@@ -50,6 +55,7 @@ public class PlayerController : MonoBehaviour
          if(count == 4)
         {
             doorOpenTextObject.SetActive(true);
+            invisibleDoor.SetActive(false);
         }
     }
 
@@ -98,26 +104,5 @@ public class PlayerController : MonoBehaviour
       {
         respawnVec = other.transform.position;
       }
-      // if(other.gameObject.CompareTag("Key 2"))
-      // {
-      //   other.gameObject.SetActive(false);
-      //   count = count + 1;
-
-      //   SetKeyCountText();
-      // }
-      // if(other.gameObject.CompareTag("Key 3"))
-      // {
-      //   other.gameObject.SetActive(false);
-      //   count = count + 1;
-
-      //   SetKeyCountText();
-      // }
-      // if(other.gameObject.CompareTag("Key 4"))
-      // {
-      //   other.gameObject.SetActive(false);
-      //   count = count + 1;
-        
-      //   SetKeyCountText();
-      // }
     }
 }
