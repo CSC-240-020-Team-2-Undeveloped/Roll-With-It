@@ -34,7 +34,9 @@ public class PlayerController : MonoBehaviour
 
       SetKeyCountText();
       SetWinText();
-      winTextObject.SetActive(false);
+      winTextObject1.SetActive(false);
+      winTextObject2.SetActive(false);
+      winTextObject3.SetActive(false);
       doorOpenTextObject.SetActive(false);
 
       respawnVec = transform.position;
