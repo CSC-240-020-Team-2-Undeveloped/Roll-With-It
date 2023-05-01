@@ -70,6 +70,10 @@ public class PlayerController : MonoBehaviour
         cam.transform.Rotate(30.0f,0,0);
 
         rb.AddForce(movement * speed);
+
+        if(Input.GetKeyDown(KeyCode.R)){
+          transform.position = respawnVec;
+        }
     }
     
     private void OnTriggerEnter(Collider other)
