@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
       rb = GetComponent<Rigidbody>();
-      count = 3;
+      count = 0;
 
       SetKeyCountText();
       winTextObject1.SetActive(false);
