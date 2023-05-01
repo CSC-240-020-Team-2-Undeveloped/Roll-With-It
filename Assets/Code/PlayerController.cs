@@ -29,8 +29,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
       rb = GetComponent<Rigidbody>();
-      count = 0;
-      countWin = 0;
+      count = 3;
 
       SetKeyCountText();
       winTextObject1.SetActive(false);
@@ -55,6 +54,7 @@ public class PlayerController : MonoBehaviour
     void SetKeyCountText()
     {
         KeyCountText.text = "Keys Collected: " + count.ToString();
+		print("Does work");
          if(count == 4)
         {
             doorOpenTextObject.SetActive(true);
